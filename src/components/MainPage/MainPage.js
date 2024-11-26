@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategories, fetchProducts } from '../../store/actions/products';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './MainPage.module.css';
-import Header from '../../components/header'; // Путь к Header
-import Footer from '../../components/Footer'; // Путь к Footer
+import Header from '../../components/header'; 
+import Footer from '../../components/Footer'; 
 
 const MainPage = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const MainPage = () => {
 
   const addToCart = (product) => {
     const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    savedCart.push({ ...product, quantity: 1 }); // Добавляем товар с количеством 1
+    savedCart.push({ ...product, quantity: 1 }); 
     localStorage.setItem('cart', JSON.stringify(savedCart));
     alert(`${product.title} added to cart!`);
   };
@@ -58,7 +58,7 @@ const MainPage = () => {
             <div 
               key={product.id} 
               className={styles.productCard}
-              onClick={() => navigate(`/product/${product.id}`)} // Переход к карточке товара
+              onClick={() => navigate(`/product/${product.id}`)} 
             >
               <img src={`http://localhost:3333${product.image}`} alt={product.title} />
               <h3>{product.title}</h3>
@@ -67,7 +67,7 @@ const MainPage = () => {
               <button 
                 className={styles.addToCartButton} 
                 onClick={(e) => {
-                  e.stopPropagation(); // Останавливаем переход при клике на кнопку
+                  e.stopPropagation(); 
                   addToCart(product);
                 }}
               >

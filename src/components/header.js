@@ -1,6 +1,6 @@
-// Header.js
-import logo from './logo.png'; // Ваш логотип
-import basketIcon from './basket.png'; // Ваша картинка корзины
+
+import logo from './logo.png'; 
+import basketIcon from './basket.png'; 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';

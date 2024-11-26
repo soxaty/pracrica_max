@@ -17,16 +17,16 @@ const ProductsPage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    setSortedProducts(products); // Обновляем отсортированные продукты при изменении списка продуктов
+    setSortedProducts(products); 
   }, [products]);
 
   const sortByPrice = () => {
-    // Сортировка по цене (по возрастанию)
+    
     setSortedProducts([...products].sort((a, b) => a.price - b.price));
   };
 
   const sortByDiscounted = () => {
-    // Сортировка по скидке (по возрастанию)
+   
     setSortedProducts([...products].sort((a, b) => {
       const priceA = a.discont_price || a.price;
       const priceB = b.discont_price || b.price;
@@ -35,7 +35,7 @@ const ProductsPage = () => {
   };
 
   const sortByTitle = () => {
-    // Сортировка по названию
+    
     setSortedProducts([...products].sort((a, b) => a.title.localeCompare(b.title)));
   };
 
@@ -80,7 +80,7 @@ const ProductsPage = () => {
                 </p>
               )}
               <button onClick={(e) => {
-                e.stopPropagation(); // Останавливаем всплытие, чтобы не переходить на страницу товара
+                e.stopPropagation(); 
                 addToCart(product);
               }}>
                 Add to Cart

@@ -11,7 +11,7 @@ export const fetchCategories = () => async (dispatch) => {
 
 export const fetchProducts = () => async (dispatch) => {
   try {
-    const response = await axios.get('http://localhost:3333/products/all'); // Добавь этот маршрут в бэкенде
+    const response = await axios.get('http://localhost:3333/products/all'); 
     dispatch({ type: 'FETCH_PRODUCTS_SUCCESS', payload: response.data });
   } catch (error) {
     dispatch({ type: 'FETCH_PRODUCTS_FAILURE', payload: error.message });
